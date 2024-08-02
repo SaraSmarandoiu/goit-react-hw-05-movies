@@ -13,10 +13,13 @@ const MovieDetails = lazy(() => import('./MovieDetails/MovieDetails'));
 const Cast = lazy(() => import('./Cast/Cast'));
 const Reviews = lazy(() => import('./Reviews/Reviews'));
 
-export function App() {
+const App = () => {
   return (
     <Router>
       <Suspense fallback={<div>Loading...</div>}>
+        <nav>
+          <a href="/">Home</a> | <a href="/movies">Movies</a>
+        </nav>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/movies" element={<Movies />} />
@@ -29,6 +32,6 @@ export function App() {
       </Suspense>
     </Router>
   );
-}
+};
 
 export default App;

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { fetchTrendingMovies } from '../../api';
 import styles from './Home.module.css';
 
@@ -8,7 +9,6 @@ const Home = () => {
   useEffect(() => {
     fetchTrendingMovies()
       .then(data => {
-        console.log('Fetched trending movies:', data); 
         setMovies(data);
       })
       .catch(error => {
@@ -21,7 +21,9 @@ const Home = () => {
       <h1>Trending Movies</h1>
       <ul>
         {movies.map(movie => (
-          <li key={movie.id}>{movie.title}</li>
+          <li key={movie.id}>
+            <Link to={`/movies/${movie.id}`}>{movie.title}</Link>
+          </li>
         ))}
       </ul>
     </div>
