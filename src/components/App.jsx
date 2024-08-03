@@ -16,7 +16,7 @@ const Reviews = lazy(() => import('./Reviews/Reviews'));
 
 const App = () => {
   return (
-    <Router>
+    <Router basename="/goit-react-hw-05-movies">
       <Suspense fallback={<div>Loading...</div>}>
         <nav>
           <Link to="/">Home</Link> | <Link to="/movies">Movies</Link>
