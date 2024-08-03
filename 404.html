@@ -6,12 +6,15 @@
     <title>Page Not Found</title>
     <script type="text/javascript">
       
+      var pathname = window.location.pathname;
+      var search = window.location.search;
       var redirectTo =
         window.location.protocol +
         '//' +
         window.location.host +
         '/?' +
-        window.location.pathname.substr(1);
+        pathname +
+        search;
       window.location.replace(redirectTo);
     </script>
   </head>
