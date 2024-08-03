@@ -4,6 +4,7 @@ import {
   Routes,
   Route,
   Navigate,
+  Link,
 } from 'react-router-dom';
 import './App.module.css';
 
@@ -18,7 +19,7 @@ const App = () => {
     <Router>
       <Suspense fallback={<div>Loading...</div>}>
         <nav>
-          <a href="/">Home</a> | <a href="/movies">Movies</a>
+          <Link to="/">Home</Link> | <Link to="/movies">Movies</Link>
         </nav>
         <Routes>
           <Route path="/" element={<Home />} />
